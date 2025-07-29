@@ -5,51 +5,52 @@ using System.Collections.Generic;
 
 public class GameFlowManager : MonoBehaviour
 {
-    /*  [SerializeField] private PlayerChunkStreamer playerChunkhunkStreamer = null;
-     private PlayerSpawner playerSpawner = null;
-  */
+    [SerializeField] private ShapeDrawingInputHandler _shapeDrawingInputHandler;
     [SerializeField] private UIService _uiService;
-    [SerializeField] private MainMenuController _mainMenu;
-    [SerializeField] private BinarySaveService _saveService;
-    [SerializeField] private MonoPool<GameObject> _bulletPool;
-    [SerializeField] UpdateManager _updateManager;
+    /* [SerializeField] private MainMenuController _mainMenu; */
+   /*  [SerializeField] private MonoPool<GameObject> _bulletPool; */
+    [SerializeField] private UpdateManager _updateManager;
+    [System.NonSerialized] private BinarySaveService _saveService;
     private List<IGameSystem> systems = new();
 
     private void Awake()
     {
+        _saveService = new BinarySaveService();
         ServiceLocator.RegisterSingleton<IUIService>(_uiService);
         ServiceLocator.RegisterSingleton<ISaveService>(_saveService);
-        ServiceLocator.RegisterSingleton<IObjectPool<GameObject>>(_bulletPool);
+       /*  ServiceLocator.RegisterSingleton<IObjectPool<GameObject>>(_bulletPool); */
         ServiceLocator.RegisterSingleton<IUpdateManager>(_updateManager);
         
-        _uiService.Register(ScreenTypes.MainMenu, _mainMenu);
+      /*   _uiService.Register(ScreenTypes.MainMenu, _mainMenu); */
         // _uiService.Register("Settings", _settingsController);
     }
     public async void Start()
     {
         var ui = ServiceLocator.Resolve<IUIService>();
-        var save  = ServiceLocator.Resolve<ISaveService>();
-        var pool  = ServiceLocator.Resolve<IObjectPool<GameObject>>();
-
+        var save = ServiceLocator.Resolve<ISaveService>();
+       /*  var pool = ServiceLocator.Resolve<IObjectPool<GameObject>>();
+ */
         // Show main menu at game start
-        await ui.ShowScreenAsync(ScreenTypes.MainMenu);
-        _uiService.Register(ScreenTypes.MainMenu, _mainMenu);
+        /* await ui.ShowScreenAsync(ScreenTypes.MainMenu); */
+        /*   _uiService.Register(ScreenTypes.MainMenu, _mainMenu); */
         /*  playerSpawner = FindFirstObjectByType<PlayerSpawner>();
           playerSpawner.Initialize(transform.GetComponent<PlayerChunkStreamer>());
           GetComponent<HitDetector>().cam = playerSpawner.GetCamera;
           systems.Add(playerChunkhunkStreamer);
           systems.Add(playerSpawner);
-
+*/
           // at this point every peer finished loading GameScene
-          RunGameFlowAsync().Forget(); */
+        systems.Add(_shapeDrawingInputHandler);
+        await UniTask.Delay(500);
+        RunGameFlowAsync().Forget(); 
     }
 
     private async UniTask RunGameFlowAsync()
     {
         // PHASE 1 – heavy boot
-      /*   foreach (var sys in systems)
+         foreach (var sys in systems)
             await sys.InitializeAsync();
-
+/*
         await UniTask.Delay(500);
         //Spawn Player and it prefabs
         await playerSpawner.ActivatePlayer(); */
