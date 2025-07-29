@@ -599,6 +599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 496fc2c669c38fa4ab7af7eccc3cc4d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _currentTemplate: {fileID: 11400000, guid: 36c47889d9771b240b3e3130b2e525b6, type: 2}
   _minPointDistance: 0.1
   _lineRenderer: {fileID: 2131154693}
   _snapTolerance: 0.2

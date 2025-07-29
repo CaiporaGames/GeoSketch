@@ -1,0 +1,5 @@
+        Step	                    Task
+✅ ShapeModel	            Holds player-drawn shape
+✅ ShapeCompletionChecker	Verifies it's a closed shape
+✅ SOShapeTemplate	        Stores template corners and tolerance
+✅ ShapeTemplateComparer	    Compares shape geometry to template
