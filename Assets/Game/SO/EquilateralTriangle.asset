@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: EquilateralTriangle
   m_EditorClassIdentifier: 
   shapeName: Equilateral Triangle
-  cornerPoints:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
   closureTolerance: 0.2
   angleTolerance: 10
+  type: 3
+  size: 5

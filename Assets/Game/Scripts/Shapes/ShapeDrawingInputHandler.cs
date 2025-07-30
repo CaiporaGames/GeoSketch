@@ -32,6 +32,11 @@ public class ShapeDrawingInputHandler : MonoBehaviour, IGameSystem
         await UniTask.Yield();
     }
 
+    public void SetSnapTargets(List<Transform> snapTargets)
+    {
+        _snapTargets = snapTargets;
+    }
+
     private void OnUpdate(float deltaTime)
     {
         if (Input.GetMouseButton(0))

@@ -352,6 +352,7 @@ GameObject:
   - component: {fileID: 977621357}
   - component: {fileID: 977621356}
   - component: {fileID: 977621355}
+  - component: {fileID: 977621358}
   m_Layer: 0
   m_Name: -- SceneManager --
   m_TagString: Untagged
@@ -414,6 +415,21 @@ MonoBehaviour:
   _shapeDrawingInputHandler: {fileID: 2131154694}
   _uiService: {fileID: 977621356}
   _updateManager: {fileID: 977621355}
+--- !u!114 &977621358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977621353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a2df656374111a479af057a23e85650, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _snapPointPrefab: {fileID: 5349067325278151333, guid: 8acef291faf838a4394872996492de0d, type: 3}
+  _drawingHandler: {fileID: 2131154694}
+  _template: {fileID: 11400000, guid: 36c47889d9771b240b3e3130b2e525b6, type: 2}
 --- !u!1 &989448006
 GameObject:
   m_ObjectHideFlags: 0
